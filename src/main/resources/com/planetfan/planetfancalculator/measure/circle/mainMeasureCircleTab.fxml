@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planetfan.planetfancalculator.AcousticsTabController">
+   <children>
+      <VBox>
+         <children>
+            <fx:include source="prantalCircleTab.fxml" />
+            <fx:include source="anemoCircleTab.fxml" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="485.0" text="*Wprowadzoną wartość do komórki zatwierdzić klawiszem Enter" textAlignment="CENTER" />
+         </children>
+      </VBox>
+   </children>
+</Pane>

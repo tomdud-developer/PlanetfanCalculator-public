@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1121.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planetfan.planetfancalculator.MassTabController">
+   <children>
+      <VBox layoutX="-2.0" prefHeight="774.0" prefWidth="1007.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <HBox layoutX="3.0" prefHeight="92.0" prefWidth="1012.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="52.0" prefWidth="156.0" text="Materiał" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="materialChoiceBox" prefHeight="52.0" prefWidth="215.0" />
+                        <Pane prefHeight="0.0" prefWidth="200.0" />
+                        <VBox alignment="CENTER" cache="true" prefHeight="57.0" prefWidth="312.0">
+                           <children>
+                              <CheckBox fx:id="editDensityCheckBox" mnemonicParsing="false" onAction="#clickDensityCheckBox" text="Edytuj domyślne wartości gęstości" />
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Aluminium">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="aluDensityField" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0" text="2700">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <effect>
+                                          <Blend />
+                                       </effect>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Stal">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="stellDensityField" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0" text="7850">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/blacha.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Blacha" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Szerokość S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="sheetField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="sheetField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość H">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="sheetField_H" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="sheetField_mass" prefHeight="31.0" prefWidth="169.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/pret.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Pręt" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Średnica S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rodField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rodField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rodField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/rura.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Rura" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Średnica S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tubeField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość ścianki C">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tubeField_C" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tubeField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tubeField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/profil_prostokat.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <VBox>
+                           <children>
+                              <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Profil" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="kwadratowy" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Wysokość H=S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="squareProfileField_HS" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="squareProfileField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość ścinaki C">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="squareProfileField_C" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="squareProfileField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/profil_prostokat.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <VBox>
+                           <children>
+                              <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Profil" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="prostokątny" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Wysokość H">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rectProfileField_H" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Szerokość S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rectProfileField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość ścinaki C">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rectProfileField_C" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="rectProfileField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rectProfileField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/katownik.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Kątownik" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Wysokość H">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="angleField_H" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Szerekość S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="angleField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość ścianki C">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="angleField_C" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="angleField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="angleField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="126.0" prefWidth="1007.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="2.0" prefHeight="146.0" prefWidth="1001.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="92.0" fitWidth="128.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/ceownik.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="156.0" styleClass="titleLabel" text="Ceownik" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" cache="true" prefHeight="126.0" prefWidth="312.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="329.0" text="Wymiary [mm]">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Wysokość H">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="teeField_H" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Szerokość S">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="teeField_S" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Grubość ścianki C">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="teeField_C" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="140.0" text="Długość D">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="teeField_D" onKeyTyped="#calculate" prefHeight="26.0" prefWidth="114.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="85.0" prefWidth="170.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutY="-3.0" prefHeight="129.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="101.0" text="Masa [kg]">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="teeField_mass" prefHeight="31.0" prefWidth="116.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

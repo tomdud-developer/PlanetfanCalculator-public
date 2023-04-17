@@ -1,0 +1,25 @@
+<assembly>
+    <id>src</id>
+    <formats>
+        <format>dir</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <moduleSets>
+        <moduleSet>
+            <includes>
+                <include>com.</include>
+            </includes>
+            <sources>
+                <includeModuleDirectory>false</includeModuleDirectory>
+                <fileSets>
+                    <fileSet>
+                        <outputDirectory>sources/${module.artifactId}</outputDirectory>
+                        <excludes>
+                            <exclude>${project.build.directory}/**</exclude>
+                        </excludes>
+                    </fileSet>
+                </fileSets>
+            </sources>
+        </moduleSet>
+    </moduleSets>
+</assembly>

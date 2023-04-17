@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planetfan.planetfancalculator.AcousticsTabController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane prefHeight="995.0" prefWidth="1000.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="338.0" minHeight="10.0" prefHeight="223.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="269.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox prefHeight="238.0" prefWidth="500.0" style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Moc akustyczna" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_1_LAeq_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_1_d_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="4.0" prefHeight="21.0" prefWidth="228.0" text="Średnica obudowy D₁ [m]">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_1_r_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość od źródła(obudowy) x₁ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="17.0" layoutY="8.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_1_PWL_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Poziom mocy akustycznej PWL [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button fx:id="A_1_calculateButton" alignment="CENTER_RIGHT" layoutX="184.0" layoutY="5.0" mnemonicParsing="false" onAction="#A_1_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="A_1_infoButton" layoutX="365.0" layoutY="12.0" mnemonicParsing="false" onAction="#A_1_infoButtonClick" prefHeight="30.0" prefWidth="117.0" text="Rysunek pomocniczy" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/help.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="253.0" prefWidth="498.0" style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.columnIndex="1">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="498.0" styleClass="titleLabel" text="Hałas w punkcie" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_2_PWL_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Moc akustyczna PWL [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_2_x_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość od źródła x [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="28.0" prefWidth="498.0" />
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="20.0" layoutY="4.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_2_LAeq_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq(x)  [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="9.0" mnemonicParsing="false" onAction="#A_2_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="266.0" prefWidth="494.0" style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.rowIndex="1">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Zmiana ciśnienia akustycznego wraz z odległością" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Źródło punktowe" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_3_LAeq1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq₁ [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_3_z1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość od źródła z₁ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_3_z2_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość do źródła z₂ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="20.0" layoutY="4.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_3_LAeq_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq [dB]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="10.0" mnemonicParsing="false" onAction="#A_3_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Korekta mocy akustycznej w zależności od obrotów" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_4_PWL1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Moc akustyczna PWL₁ [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_4_n1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Prędkość obwodowa n₁ [m/s]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_4_n2_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Planowana prędkość obwodowa n₂ [m/s]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="17.0" layoutY="8.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_4_PWL_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Poziom mocy akustycznej PWL [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="12.0" mnemonicParsing="false" onAction="#A_4_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.rowIndex="2">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Korekta mocy akustycznej w zależności od średnicy" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_5_PWL1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Moc akustyczna PWL₁ [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_5_D1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Średnica D₁ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_5_D2_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Średnica planowana D₂ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="17.0" layoutY="8.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_5_PWL_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Poziom mocy akustycznej PWL [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="12.0" mnemonicParsing="false" onAction="#A_5_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="266.0" prefWidth="488.0" style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Zmiana ciśnienia akustycznego wraz z odległością" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Źródło liniowe" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_ZCAWZOZL_LAeq1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq₁ [dB(A)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_ZCAWZOZL_z1_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość od źródła z₁ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_ZCAWZOZL_z2_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Odległość do źródła z₂ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="20.0" layoutY="4.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_ZCAWZOZL_LAeq_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Ciśnienie akustyczne LAeq [dB]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="10.0" mnemonicParsing="false" onAction="#A_ZCAWZOZL_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.rowIndex="3">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Korekta mocy lub ciśnienia w zależności od ilości źródeł " textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_KMLCWZOIZ_PWL_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="PWL lub SPL [dB(-)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_KMLCWZOIZ_i_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Liczba źródeł i" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="17.0" layoutY="8.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_KMLCWZOIZ_PWL2_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="PWL lub SPL [dB(-)]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="14.0" mnemonicParsing="false" onAction="#A_KMLCWZOIZ_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox style="-fx-border-style: dotted; -fx-border-color: #a7c957; -fx-border-width: 2;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="515.0" styleClass="titleLabel" text="Prędkość obwodowa" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane style="-fx-border-width: 1;">
+                           <children>
+                              <TextField fx:id="A_PO_n_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Prędkość obrotowa n₁ [min⁻¹]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_PO_D_field" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Średnica D₁ [m]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="500.0">
+                           <children>
+                              <Separator layoutX="17.0" layoutY="8.0" prefHeight="3.0" prefWidth="456.0" style="-fx-background-color: #70db70;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <TextField fx:id="A_PO_v_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Prędkość obwodowa v [m/s]" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="68.0" prefWidth="500.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" layoutX="184.0" layoutY="14.0" mnemonicParsing="false" onAction="#A_PO_calculateClick" prefHeight="32.0" prefWidth="128.0" text="Przelicz  " textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/calculator.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="997.0" styleClass="titleLabel" text="Obliczanie odległości od źródła" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <AnchorPane prefHeight="264.0" prefWidth="403.0">
+                           <children>
+                              <Arc fill="#87b0d3" layoutX="295.0" layoutY="104.0" length="180.0" radiusX="155.0" radiusY="147.0" rotate="90.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="41.0" layoutX="171.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" width="93.0" />
+                              <Text layoutX="133.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="T" wrappingWidth="2.7071211338043213" />
+                              <Line endX="72.0" endY="-29.0" layoutX="242.0" layoutY="96.0" startX="-24.5" startY="85.5" />
+                              <Line endX="4.70709228515625" endY="23.29296875" layoutX="310.0" layoutY="43.0" startX="6.0" startY="46.0" />
+                              <Line endX="-4.0" endY="14.0" layoutX="320.0" layoutY="53.0" startX="-27.0" startY="14.0" />
+                              <TextField fx:id="A_OOZ_R_field" layoutX="236.0" layoutY="112.0" onKeyTyped="#A_OZZ_R_typed" prefHeight="24.0" prefWidth="60.0" promptText="R[m]" />
+                              <Line endX="-135.0" endY="-8.0" layoutX="405.0" layoutY="200.0" startX="-42.0" startY="-8.0" />
+                              <Line endX="-142.0" endY="-2.0" layoutX="491.0" layoutY="205.0" startX="-127.5" startY="-12.5" />
+                              <Line endX="-150.0" endY="-33.5" layoutX="501.0" layoutY="215.0" startX="-137.5" startY="-23.0" />
+                              <Line endX="-142.5" endY="-6.5" layoutX="412.0" layoutY="198.0" startX="-123.0" startY="-16.5" />
+                              <Line endX="-152.5" endY="-16.5" layoutX="422.0" layoutY="208.0" startX="-134.0" startY="-4.0" />
+                              <TextField fx:id="A_OOZ_Z_field" layoutX="289.0" layoutY="181.0" onKeyTyped="#A_OZZ_DZ_typed" prefHeight="24.0" prefWidth="53.0" promptText="Z[m]" />
+                              <Line endX="-130.0" endY="-8.0" layoutX="305.0" layoutY="253.0" startX="-43.0" startY="-8.0" />
+                              <Line endX="-155.5" endY="-2.0" layoutX="330.0" layoutY="247.0" startX="-142.0" startY="-12.0" />
+                              <Line endX="-150.5" endY="-27.5" layoutX="325.0" layoutY="273.0" startX="-138.20709228515625" startY="-15.20703125" />
+                              <Line endX="-81.0" endY="-41.0" layoutX="330.0" layoutY="275.0" startX="-67.5" startY="-29.5" />
+                              <Line endX="-91.0" endY="-31.0" layoutX="340.0" layoutY="287.0" startX="-77.5" startY="-42.0" />
+                              <TextField fx:id="A_OOZ_D_field" layoutX="190.0" layoutY="232.0" onKeyTyped="#A_OZZ_DZ_typed" prefHeight="24.0" prefWidth="53.0" promptText="D[m]" />
+                              <Text layoutX="90.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" wrappingWidth="2.7071211338043213" />
+                              <Text layoutX="181.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wentylator" wrappingWidth="74.70712113380432" />
+                           </children>
+                        </AnchorPane>
+                        <VBox prefHeight="264.0" prefWidth="586.0">
+                           <children>
+                              <AnchorPane>
+                                 <children>
+                                    <TextField fx:id="A_OOZ_Area_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Pole powierzchni A znając R[m²]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <TextField fx:id="A_OOZ_Perimeter_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Obwód półokręgu T znając R [m]   ( π*R )" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <TextField fx:id="A_OOZ_Sphere1_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Pole sfery nad wentylatorem S₁ znając R [m²]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <TextField fx:id="A_OOZ_Sphere2_field" editable="false" layoutX="24.0" prefHeight="28.0" prefWidth="155.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="208.0" layoutY="4.0" text="Pole sfery nad wentylatorem S₂ znając D i Z [m²]" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="316.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planetfan.planetfancalculator.measure.circle.MeasurePrantelCircleTabController">
+   <children>
+      <VBox layoutX="-2.0" prefHeight="296.0" prefWidth="1007.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="1007.0" styleClass="titleLabel" text="Pomiar wydajności rurką Prandtla w kanale okragłym">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" top="15.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <HBox prefHeight="266.0" prefWidth="1007.0">
+               <children>
+                  <AnchorPane prefHeight="285.0" prefWidth="488.0">
+                     <children>
+                        <TableView fx:id="table_info" prefHeight="259.0" prefWidth="485.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Wartość ciśnienia dynamicznego ΔPd [Pa]">
+                                 <columns>
+                                    <TableColumn fx:id="column_id" prefWidth="63.0" sortable="false" style="-fx-alignment: CENTER;" text="Lp" />
+                                    <TableColumn fx:id="column_pressure" prefWidth="113.0" sortable="false" style="-fx-alignment: CENTER;" text="Ciśnienie" />
+                                    <TableColumn fx:id="column_pressureUnit" prefWidth="96.0" sortable="false" style="-fx-alignment: CENTER;" text="Jednostka" />
+                                    <TableColumn fx:id="column_len" prefWidth="116.0" sortable="false" style="-fx-alignment: CENTER;" text="Zagłębienie" />
+                                    <TableColumn fx:id="column_lenUnit" minWidth="8.0" prefWidth="95.0" sortable="false" style="-fx-alignment: CENTER;" text="Jednostka" />
+                                 </columns>
+                              </TableColumn>
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="298.0" prefWidth="420.0">
+                     <children>
+                        <VBox prefHeight="265.0" prefWidth="522.0">
+                           <children>
+                              <AnchorPane prefHeight="79.0" prefWidth="522.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="84.0" prefWidth="522.0">
+                                       <children>
+                                          <Label text="Średnia kolumny 'Ciśnienie' [Pa]">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="averagePressureField" editable="false" prefHeight="24.0" prefWidth="107.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="24.0" prefWidth="522.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="522.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#depthFill" text="Wprowadź zagłębienie" />
+                                          <Label text="~Średnica Kanału D [m]">
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold Italic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="diameterField" onKeyTyped="#diameterTyped" prefHeight="24.0" prefWidth="107.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="13.0" prefWidth="522.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="522.0">
+                                       <children>
+                                          <Label text="Powierzchnia A [m²]">
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="areaField" prefHeight="24.0" prefWidth="107.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="81.0" prefWidth="522.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" layoutY="57.0" prefHeight="20.0" prefWidth="522.0">
+                                       <children>
+                                          <Label text="Prędkość c [m/s]">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="velocityField" editable="false" prefHeight="24.0" prefWidth="107.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="26.0" prefWidth="522.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" layoutY="14.0" prefHeight="8.0" prefWidth="522.0">
+                                       <children>
+                                          <Label text="Wydajność Q [m³/s]">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="efficiencyField" editable="false" prefHeight="24.0" prefWidth="107.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

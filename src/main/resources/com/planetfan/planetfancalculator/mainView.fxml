@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planetfan.planetfancalculator.MainController">
+   <children>
+      <TabPane fx:id="tabPane" prefHeight="809.0" prefWidth="1033.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-font-weight: BOLD;" text="  Podobieństwo wentylatorów  ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="795.0" prefWidth="1016.0">
+                     <children>
+                        <fx:include fx:id="similarityTab" source="similarityTab.fxml" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/similar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+          <Tab style="-fx-font-weight: BOLD;" text="  Gęstość powietrza  ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <fx:include fx:id="densityTab" source="densityTab.fxml" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/density.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab style="-fx-font-weight: BOLD;" text="  Akustyka  ">
+              <content>
+                  <ScrollPane prefHeight="769.0" prefWidth="1000.0">
+                    <content>
+                      <AnchorPane maxHeight="-Infinity" minHeight="773.0" minWidth="0.0" prefHeight="1291.0" prefWidth="1008.0">
+                           <children>
+                              <fx:include fx:id="acousticsTab" source="acousticsTab.fxml" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/sound-wave.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab style="-fx-font-weight: BOLD;" text="Masy elementów">
+               <content>
+                  <ScrollPane prefHeight="804.0" prefWidth="1016.0">
+                     <content>
+                        <AnchorPane minHeight="1139.0" minWidth="0.0" prefHeight="1139.0" prefWidth="1001.0">
+                           <children>
+                              <fx:include source="massTab.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/physics.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab style="-fx-font-weight: BOLD;" text="Pomiary">
+               <content>
+                  <TabPane>
+                     <tabs>
+                        <Tab closable="false" text="Kanał Okrągły">
+                           <content>
+                              <ScrollPane prefHeight="783.0" prefWidth="1016.0">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane layoutX="14.0" layoutY="7.0">
+                                             <children>
+                                                <VBox layoutY="29.0">
+                                                   <children>
+                                                      <fx:include source="measure/circle/prantalCircleTab.fxml" />
+                                                      <fx:include source="measure/circle/anemoCircleTab.fxml" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Kanał Prostokątny">
+                           <content>
+                              <ScrollPane prefHeight="783.0" prefWidth="1016.0">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane layoutX="14.0" layoutY="7.0">
+                                             <children>
+                                                <fx:include source="measure/rectangle/mainMeasureRectangleTab.fxml" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Przeliczanie mocy">
+                           <content>
+                              <ScrollPane prefHeight="783.0" prefWidth="1016.0">
+                                 <content>
+                                    <fx:include source="measure/power/powerTab.fxml" />
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/gauge.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab style="-fx-font-weight: BOLD;" text="Informacje">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="5.0" layoutY="1.0" prefHeight="779.0" prefWidth="1024.0">
+                           <children>
+                              <ImageView fitHeight="145.0" fitWidth="696.0" layoutX="164.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../icons/logo-ciemne-tlo@2.png" />
+                                 </image>
+                              </ImageView>
+                              <TextArea editable="false" layoutX="245.0" layoutY="319.0" prefHeight="346.0" prefWidth="534.0" styleClass="text-field" text="-&gt; dodanie rysunku pomocniczego w zakładce Akustyka -&gt; Moc akustyczna&#10;-&gt; dodanie ikon&#10;-&gt; zmiana wpisywanej jednoski w zkładce Gęstośc powietrza -&gt; wiglotność (z bezwymiarowego&#10;     współczynnika na procenty)&#10;-&gt; weryfikacja obliczeń w kartach&#10;-&gt; Karta Podobieństwo wentylatorów oblicza wartości według wzorów:&#10;            Qk = Q1 * nk / n1 * Math.pow(Dk/D1, 3);&#10;            dPk = dP1 * rok / ro1 * Math.pow(Dk/D1, 2) * Math.pow(nk/n1, 2);&#10;            Nk = rok / ro1 * Math.pow(Dk/D1, 5) * Math.pow(nk/n1, 3) * N1;&#10;            eta = Q1 * dP1 / N1 * 100 / 1000;&#10;            U = Math.PI * Dk * nk / 60;&#10;            omega = 2 * Math.PI * nk / 60;&#10;            Ak = Math.PI * Math.pow(Dk, 2) / 4;&#10;            c = Qk / Ak;&#10;            Pd = rok * Math.pow(c, 2) / 2;&#10;&#10;            double fi = Q1 / (Math.PI / 4 * Math.pow(D1, 2) * (Math.PI * D1 * n1 / 60));&#10;            double psi = dP1 / (0.5 * ro1 * Math.pow(Math.PI * D1 * n1 / 60, 2));&#10;" />
+                              <Label layoutX="254.0" layoutY="187.0" styleClass="titleLabel" text="PlanetfanCalculator Version 2.2">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="435.0" layoutY="288.0" styleClass="titleLabel" text="Ostatnie zmiany">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/information.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
